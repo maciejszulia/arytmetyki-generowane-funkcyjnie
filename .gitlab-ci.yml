@@ -1,0 +1,20 @@
+stages: [test, build]
+
+default:
+  image: python:3.12-slim
+  before_script:
+    - pip install --quiet -e ".[dev]"
+
+pytest:
+  stage: test
+  script:
+    - pytest -v
+
+figures:
+  stage: build
+  script:
+    - python -m nna.figures
+  artifacts:
+    paths:
+      - docs/figures/
+    expire_in: 1 week
