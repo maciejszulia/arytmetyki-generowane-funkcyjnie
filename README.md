@@ -177,7 +177,7 @@ h.add(60.0, 60.0)      # < 65 — saturacja trzyma limit
 ## Struktura
 
 ```
-src/nna/core.py        # klasa bazowa + 8 modeli (tylko pary f, f⁻¹)
+src/nna/core.py        # klasa bazowa + 10 modeli (tylko pary f, f⁻¹)
 src/nna/thermal.py     # promieniowanie, chłodzenie hybrydowe, saturacja
 src/nna/figures.py     # 8 wykresów: matplotlib + seaborn
 tests/test_axioms.py   # aksjomaty + jawne wzory + przypadki brzegowe
