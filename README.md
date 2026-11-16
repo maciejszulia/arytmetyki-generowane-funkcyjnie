@@ -15,7 +15,7 @@ n ⊙ a = f⁻¹(n · f(a))           a ⊘ n = f⁻¹(f(a) / n)
 
 To jest **transport struktury** (izomorfizm ciał), spopularyzowany przez
 Grossmana i Katza w 1972 r. jako *non-Newtonian calculus*. Repozytorium zawiera
-dziewięć konkretnych modeli, ich jawne wzory, wizualizacje i zastosowania —
+10 konkretnych modeli, ich jawne wzory, wizualizacje i zastosowania —
 oraz uczciwą listę tego, co w tym jest stare, a co nowe.
 
 ## Dlaczego to działa
@@ -39,12 +39,13 @@ wyglądają w starych współrzędnych różnie. Dlatego:
 | harmoniczna | `1/x` | `1/y` | — (∞) | `1` | `ab/(a+b)` | `ab` | `x≠0` |
 | potęgowa `p` | `x^p` | `y^{1/p}` | `0` | `1` | `(a^p+b^p)^{1/p}` | `ab` | `x≥0` |
 | relatywistyczna | `artanh(v/c)` | `c·tanh y` | `0` | `c·tanh 1` | `(a+b)/(1+ab/c²)` | `c·tanh(artanh(a/c)·artanh(b/c))` | `|v|<c` |
-| logistyczna | `ln(x/(1−x))` | `σ(y)` | `0,5` | `e/(e+1)` | `ab/(ab+(1−a)(1−b))` | `1/(1+((1−a)/a)^{ln((1−b)/b)})` | `0<x<1` |
+| logistyczna | `ln(x/(1−x))` | `σ(y)` | `0,5` | `e/(e+1)` | `ab/(ab+(1−a)(1−b))` | `1/(1+((1−a)/a)^{ln(b/(1−b))})` | `0<x<1` |
+| sześcienno-logistyczna | `(ln(x/(1−x)))³` | `σ(∛y)` | `0,5` | `e/(e+1)` | `σ(∛(ℓ(a)³+ℓ(b)³))` | `1/(1+((1−a)/a)^{ln(b/(1−b))})` | `0<x<1` |
 | Lamberta | `x+ln x` | `W(e^y)` | `W(1)≈0,5671` | `1` | `W(ab·e^{a+b})` | `W((a·e^a)^{b+ln b})` | `x>0` |
 | softplus | `ln(e^x−1)` | `ln(e^y+1)` | `ln 2` | `ln(e+1)` | `ln((e^a−1)(e^b−1)+1)` | `ln((e^a−1)^{ln(e^b−1)}+1)` | `x>0` |
 | Keplera | `x+k·sin x` | numerycznie | `0` | `f⁻¹(1)` | `f⁻¹(f(a)+f(b))` | `f⁻¹(f(a)·f(b))` | ℝ |
 
-`σ` to sigmoida, `W` — gałąź główna funkcji W Lamberta.
+`σ` to sigmoida, `ℓ(x) = ln(x/(1−x))` to logit, `W` — gałąź główna funkcji W Lamberta.
 W kodzie **nie ma** tych uproszczonych wzorów: każdy model definiuje tylko parę
 `(f, f⁻¹)`, a działania są dziedziczone z klasy bazowej. Tabela jest testowana
 osobno (`tests/test_axioms.py`) — dzięki temu dokumentacja nie może rozjechać się
