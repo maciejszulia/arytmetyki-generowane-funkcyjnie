@@ -32,20 +32,20 @@ wyglądają w starych współrzędnych różnie. Dlatego:
 
 ## Modele
 
-| model | `f(x)` | `f⁻¹(y)` | `0_f` | `1_f` | `a ⊕ b` | `a ⊗ b` | nośnik |
+| model | $`f(x)`$ | $`f^{-1}(y)`$ | $`0_f`$ | $`1_f`$ | $`a \oplus b`$ | $`a \otimes b`$ | nośnik |
 |---|---|---|---|---|---|---|---|
-| klasyczna | `x` | `y` | `0` | `1` | `a+b` | `ab` | ℝ |
-| geometryczna | `ln x` | `e^y` | `1` | `e` | `ab` | `a^{ln b}` | `x>0` |
-| harmoniczna | `1/x` | `1/y` | — (∞) | `1` | `ab/(a+b)` | `ab` | `x≠0` |
-| potęgowa `p` | `x^p` | `y^{1/p}` | `0` | `1` | `(a^p+b^p)^{1/p}` | `ab` | `x≥0` |
-| relatywistyczna | `artanh(v/c)` | `c·tanh y` | `0` | `c·tanh 1` | `(a+b)/(1+ab/c²)` | `c·tanh(artanh(a/c)·artanh(b/c))` | `|v|<c` |
-| logistyczna | `ln(x/(1−x))` | `σ(y)` | `0,5` | `e/(e+1)` | `ab/(ab+(1−a)(1−b))` | `1/(1+((1−a)/a)^{ln(b/(1−b))})` | `0<x<1` |
-| sześcienno-logistyczna | `(ln(x/(1−x)))³` | `σ(∛y)` | `0,5` | `e/(e+1)` | `σ(∛(ℓ(a)³+ℓ(b)³))` | `1/(1+((1−a)/a)^{ln(b/(1−b))})` | `0<x<1` |
-| Lamberta | `x+ln x` | `W(e^y)` | `W(1)≈0,5671` | `1` | `W(ab·e^{a+b})` | `W((a·e^a)^{b+ln b})` | `x>0` |
-| softplus | `ln(e^x−1)` | `ln(e^y+1)` | `ln 2` | `ln(e+1)` | `ln((e^a−1)(e^b−1)+1)` | `ln((e^a−1)^{ln(e^b−1)}+1)` | `x>0` |
-| Keplera | `x+k·sin x` | numerycznie | `0` | `f⁻¹(1)` | `f⁻¹(f(a)+f(b))` | `f⁻¹(f(a)·f(b))` | ℝ |
+| klasyczna | $`x`$ | $`y`$ | $`0`$ | $`1`$ | $`a+b`$ | $`ab`$ | $`\mathbb{R}`$ |
+| geometryczna | $`\ln x`$ | $`e^y`$ | $`1`$ | $`e`$ | $`ab`$ | $`a^{\ln b}`$ | $`x>0`$ |
+| harmoniczna | $`1/x`$ | $`1/y`$ | — ($`\infty`$) | $`1`$ | $`\frac{ab}{a+b}`$ | $`ab`$ | $`x \neq 0`$ |
+| potęgowa $`p`$ | $`x^p`$ | $`y^{1/p}`$ | $`0`$ | $`1`$ | $`(a^p+b^p)^{1/p}`$ | $`ab`$ | $`x \geq 0`$ |
+| relatywistyczna | $`\operatorname{artanh}(v/c)`$ | $`c \tanh y`$ | $`0`$ | $`c \tanh 1`$ | $`\frac{a+b}{1+ab/c^2}`$ | $`c \tanh\bigl(\operatorname{artanh}(a/c) \operatorname{artanh}(b/c)\bigr)`$ | $`\lvert v \rvert < c`$ |
+| logistyczna | $`\ln\frac{x}{1-x}`$ | $`\sigma(y)`$ | $`0{,}5`$ | $`\frac{e}{e+1}`$ | $`\frac{ab}{ab+(1-a)(1-b)}`$ | $`\Bigl(1+\bigl(\tfrac{1-a}{a}\bigr)^{\ln\frac{b}{1-b}}\Bigr)^{-1}`$ | $`0<x<1`$ |
+| sześcienno-logistyczna | $`\bigl(\ln\frac{x}{1-x}\bigr)^3`$ | $`\sigma\bigl(\sqrt[3]{y}\bigr)`$ | $`0{,}5`$ | $`\frac{e}{e+1}`$ | $`\sigma\bigl(\sqrt[3]{\ell(a)^3+\ell(b)^3}\bigr)`$ | $`\Bigl(1+\bigl(\tfrac{1-a}{a}\bigr)^{\ln\frac{b}{1-b}}\Bigr)^{-1}`$ | $`0<x<1`$ |
+| Lamberta | $`x+\ln x`$ | $`W(e^y)`$ | $`W(1) \approx 0{,}5671`$ | $`1`$ | $`W\bigl(ab\,e^{a+b}\bigr)`$ | $`W\bigl((a e^a)^{b+\ln b}\bigr)`$ | $`x>0`$ |
+| softplus | $`\ln(e^x-1)`$ | $`\ln(e^y+1)`$ | $`\ln 2`$ | $`\ln(e+1)`$ | $`\ln\bigl((e^a-1)(e^b-1)+1\bigr)`$ | $`\ln\bigl((e^a-1)^{\ln(e^b-1)}+1\bigr)`$ | $`x>0`$ |
+| Keplera | $`x+k \sin x`$ | numerycznie | $`0`$ | $`f^{-1}(1)`$ | $`f^{-1}\bigl(f(a)+f(b)\bigr)`$ | $`f^{-1}\bigl(f(a)\,f(b)\bigr)`$ | $`\mathbb{R}`$ |
 
-`σ` to sigmoida, `ℓ(x) = ln(x/(1−x))` to logit, `W` — gałąź główna funkcji W Lamberta.
+$`\sigma`$ to sigmoida, $`\ell(x) = \ln\frac{x}{1-x}`$ to logit, $`W`$ — gałąź główna funkcji W Lamberta.
 W kodzie **nie ma** tych uproszczonych wzorów: każdy model definiuje tylko parę
 `(f, f⁻¹)`, a działania są dziedziczone z klasy bazowej. Tabela jest testowana
 osobno (`tests/test_axioms.py`) — dzięki temu dokumentacja nie może rozjechać się
