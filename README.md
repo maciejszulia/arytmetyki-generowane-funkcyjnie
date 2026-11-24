@@ -201,3 +201,7 @@ matlab/nna_demo.m      # wersja MATLAB/Octave: modele + wykresy
 ## Licencja
 
 MIT — patrz [LICENSE](LICENSE).
+
+## Documentation
+
+[Architecture documentation (arc42)](docs/architecture/README.md)
